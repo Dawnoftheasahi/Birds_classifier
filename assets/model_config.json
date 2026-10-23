@@ -1,0 +1,50 @@
+{
+ "num_classes": 200,
+ "mean": [
+  0.485,
+  0.456,
+  0.406
+ ],
+ "std": [
+  0.229,
+  0.224,
+  0.225
+ ],
+ "crop_ratio": 0.875,
+ "default_model": "best",
+ "models": {
+  "scratch": {
+   "label": "Custom CNN (scratch) 224px",
+   "experiment": "E2_scratch_regularised",
+   "arch": "birdcnn",
+   "img_size": 224,
+   "weights": "weights/scratch.pth",
+   "params_m": 6.49,
+   "test_top1": 0.3754152823920266,
+   "test_avg_per_class": 0.3674583333333334,
+   "test_top5": 0.6461794019933554
+  },
+  "resnet50": {
+   "label": "ResNet-50 224px",
+   "experiment": "E4_resnet50_finetune",
+   "arch": "resnet50.tv_in1k",
+   "img_size": 224,
+   "weights": "weights/resnet50.pth",
+   "params_m": 23.92,
+   "test_top1": 0.7898671096345515,
+   "test_avg_per_class": 0.7843214285714285,
+   "test_top5": 0.9501661129568106
+  },
+  "best": {
+   "label": "ConvNeXt-Tiny 384px (train+val) - best",
+   "experiment": "FINAL_E6_convnext_tiny_384",
+   "arch": "convnext_tiny.fb_in1k",
+   "img_size": 384,
+   "weights": "weights/best.pth",
+   "params_m": 27.97,
+   "test_top1": 0.8887043189368771,
+   "test_avg_per_class": 0.8870535714285714,
+   "test_top5": 0.9825581395348837
+  }
+ }
+}
